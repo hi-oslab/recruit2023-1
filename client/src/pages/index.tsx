@@ -13,10 +13,15 @@ import dynamic from 'next/dynamic'
 import { useRef } from 'react'
 import { Dom } from '@/components/dom/Dom'
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
+import Image from 'next/image'
 
 export default function Page(props) {
   return (
     <>
+      <div className='fixed flex w-fit h-fit'>
+        <Image src='/data/renderimage.png' alt='OSL2023Poster' width={1190} height={1683} />
+      </div>
+
       <Dom />
       <Scene>
         {/* 

@@ -19,12 +19,14 @@ export const SpinnerCover = styled.div`
 export const Spinner = styled.span`
   width: 40px;
   height: 40px;
-  padding: 10px;
   display: flex;
-  background: #fff;
-  border-radius: 10%;
+  background: #000;
+  padding: 4px;
+  border-radius: 12%;
+  overflow: hidden;
   box-sizing: border-box;
-  animation: flipX 1s linear infinite;
+  animation: flipX 1.3s linear infinite;
+  color: white;
 
   @keyframes flipX {
     0% {

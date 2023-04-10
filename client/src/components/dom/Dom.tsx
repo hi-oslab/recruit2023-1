@@ -1,11 +1,46 @@
 import * as S from './styles'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 export const Dom = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
   return (
     <>
+      {isOpen && (
+        <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity-10 backdrop-blur-sm'>
+          <div className='flex relative flex-col gap-4 justify-center items-center bg-white bg-opacity-90  p-8 w-fit h-fit rounded-2xl'>
+            <button className='absolute top-2 right-2' onClick={() => setIsOpen(false)}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6'
+                fill='black'
+                viewBox='0 0 24 24'
+                stroke='currentColor'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+              </svg>
+            </button>
+            <p className='flex flex-col justify-center items-center text-center w-fit text-xl'>
+              🙌 Open Source Lab 2023 Recruit 🙌
+              <p className='flex w-fit text-xs text-center'>*아래에 버튼을 누르면 신청 구글폼으로 연결됩니다.</p>
+            </p>
+            <button
+              onClick={() =>
+                router.push(
+                  'https://docs.google.com/forms/d/e/1FAIpQLSehAWP5OzQU2OQQkSkBxtR1uEuNQS_X0-NCXRc0HUOrwFDb7g/viewform?usp=sf_link/',
+                )
+              }
+              className='flex px-4 py-1 text-lg text-white border border-black bg-black text-white rounded-full w-fit hover:bg-white hover:text-black active:bg-white active:text-black'>
+              지원하러가기
+            </button>
+          </div>
+        </div>
+      )}
+      <div className='fixed flex items-center justify-center h-full w-fit'>
+        <div className='fixed z-10 flex flex-col justify-center w-full h-full bg-black opacity-70' />
+        <Image src='/data/renderimage.png' alt='OSL2023Poster' width={1190} height={1683} />
+      </div>
       <div className='fixed z-20 flex flex-col justify-start w-full p-4 text-white h-fit'>
         <p className='flex w-fit  text-xxs'>Hongik univ. Interactive media art crew</p>
         <h1 className='flex text-2xl font-bold w-fit'>
@@ -14,11 +49,7 @@ export const Dom = () => {
       </div>
       <div className='fixed bottom-0 right-0 z-50 flex flex-col justify-start p-4 gap-4 h-fit'>
         <button
-          onClick={() =>
-            router.push(
-              'https://docs.google.com/forms/d/e/1FAIpQLSehAWP5OzQU2OQQkSkBxtR1uEuNQS_X0-NCXRc0HUOrwFDb7g/viewform?usp=sf_link/',
-            )
-          }
+          onClick={() => setIsOpen(true)}
           className='flex px-4 py-2 text-lg font-bold text-white bg-white border-2 border-white rounded-full bg-opacity-10 backdrop-blur-sm animate-pulse'>
           🔥신청하기
         </button>

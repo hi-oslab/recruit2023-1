@@ -20,6 +20,7 @@ const Scene = ({ children, ...props }) => {
     <>
       <Canvas ref={canvasRef} {...props} shadows camera={{ position: [0, 0, 100], fov: 70.531 }}>
         <Suspense fallback={<Loader />}>
+          <color attach='background' args={['#000']} />
           {children}
           <Preload all />
         </Suspense>
