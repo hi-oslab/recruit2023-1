@@ -64,7 +64,7 @@ export const Dom = () => {
         <div className='flex flex-col '>
           <p className='flex text-xs font-bold w-fit'>모집대상</p>
           <p className='flex w-fit  text-xxs'>
-            인터랙션을 활용한 디지털 <br /> 미디엉 아트에 관심이 많은 <br /> 재학생 및 휴학생
+            인터랙션을 활용한 디지털 <br /> 미디어 아트에 관심이 많은 <br /> 재학생 및 휴학생
           </p>
         </div>
         <div className='flex flex-col '>
