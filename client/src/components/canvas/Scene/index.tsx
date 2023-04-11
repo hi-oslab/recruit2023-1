@@ -18,7 +18,7 @@ const Scene = ({ children, ...props }) => {
   const canvasRef = useRef()
   return (
     <>
-      <Canvas ref={canvasRef} {...props} shadows camera={{ position: [0, 0, 100], fov: 70.531 }}>
+      <Canvas ref={canvasRef} {...props} shadows camera={{ position: [0, 0, 20], fov: 70.531 }}>
         <Suspense fallback={<Loader />}>
           <color attach='background' args={['#000']} />
           {children}

@@ -8,8 +8,6 @@ export function Model(props) {
     GLTFLoader,
     'https://hi-oslab.s3.ap-northeast-2.amazonaws.com/ksy-c4d.glb',
     (loader) => {
-      console.log(loader)
-
       const dracoLoader = new DRACOLoader()
       dracoLoader.setDecoderPath('./draco/')
       loader.setDRACOLoader(dracoLoader)
@@ -98,14 +96,7 @@ export function Model(props) {
         geometry={nodes.Capsule.geometry}
         position={[83738.5156, -49631.9648, -11106.6035]}
         rotation={[-0.5637, -0.3884, -0.5257]}>
-        <meshStandardMaterial
-          attach='material'
-          color='ForestGreen'
-          roughness={0.5}
-          metalness={0.5}
-          opacity={0.5}
-          transparent
-        />
+        <meshStandardMaterial attach='material' color='ForestGreen' roughness={0.5} metalness={0.5} opacity={1} />
       </mesh>
 
       <mesh
@@ -136,14 +127,7 @@ export function Model(props) {
         <meshStandardMaterial attach='material' color='FireBrick' roughness={0.5} metalness={0.5} opacity={1} />
       </mesh>
       <mesh castShadow receiveShadow geometry={nodes.Volume_Mesher1.geometry}>
-        <meshStandardMaterial
-          attach='material'
-          color='SeaGreen'
-          roughness={0.1}
-          metalness={0.5}
-          opacity={0.1}
-          transparent
-        />
+        <meshStandardMaterial attach='material' color='SeaGreen' roughness={0.1} metalness={0.5} opacity={1} />
       </mesh>
       <mesh
         castShadow
