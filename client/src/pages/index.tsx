@@ -18,10 +18,6 @@ import Image from 'next/image'
 export default function Page(props) {
   return (
     <>
-      <div className='fixed flex w-fit h-fit'>
-        <Image src='/data/renderimage.png' alt='OSL2023Poster' width={1190} height={1683} />
-      </div>
-
       <Dom />
       <Scene>
         {/* 
@@ -52,7 +48,7 @@ export default function Page(props) {
         <ScaledModel />
         <Environment files='./data/mutianyu_2k.hdr' />
         <ScaledModel />
-        <OrbitControls autoRotate={false} autoRotateSpeed={1} enableDamping enableZoom={false} enableRotate={true} />
+        <OrbitControls autoRotate={true} autoRotateSpeed={5} enableDamping enableZoom={false} enableRotate={true} />
       </Scene>
     </>
   )
